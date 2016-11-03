@@ -1,0 +1,6 @@
+<%= simple_form_for [:admin, @subcategory] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :category_id, collection: category_for_collection, prompt: 'Select Category' %>
+    <%= f.input :type, collection: [:Product, :Service], prompt: 'Select Type' %>
+    <%= f.submit 'Save', class: 'btn btn-primary' %>
+<% end %>

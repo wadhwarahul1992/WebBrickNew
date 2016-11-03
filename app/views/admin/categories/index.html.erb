@@ -1,0 +1,25 @@
+<%= link_to 'Create New', new_admin_category_path, class: 'btn btn-primary' %>
+<table style="width: 100%; margin-top: 10px;">
+  <tr class="info">
+    <th style="padding: 5px; background-color: #88dbfb; border-right: 1px solid #115873;">Category Id</th>
+    <th style="padding: 5px; background-color: #88dbfb;">Category Name</th>
+    <th style="padding: 5px; background-color: #88dbfb;">Action</th>
+  </tr>
+  <% @categories.each do |category| %>
+      <tr>
+        <td><%= category.id %></td>
+        <td><%= category.name %></td>
+        <td>
+          <%= link_to edit_admin_category_path(category) do %>
+            edit
+          <% end %>
+          <%= link_to admin_category_path(category), method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-danger' do %>
+            Delete
+          <% end %>
+          <%= link_to admin_category_path(category) do %>
+            Show
+          <% end %>
+        </td>
+      </tr>
+  <% end %>
+</table>

@@ -1,0 +1,5 @@
+<%= link_to 'New Subcategory', new_admin_subcategory_path, class: 'btn btn-primary' %>
+<% @subcategories.each do |subcategory| %>
+    <%= subcategory.name %>
+    <%= subcategory.type %>
+<% end %>
